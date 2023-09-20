@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "../Card/Card";
 import "./App2.css";
+import Menu from "../Menu/Menu";
 function App2(props) {
   return (
     <>
@@ -59,11 +60,8 @@ function App2(props) {
               <div className="titulo">
                 <h1>Today's HightLights</h1>
               </div>
-              <div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+              <div className="menu">
+               <Menu dataDias={props.data}></Menu>
               </div>
             </>
           )}

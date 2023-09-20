@@ -84,22 +84,35 @@
   display: block;
   width: 100%;
   height: 100%;
-  justify-content: center;
   background-color: rgba(16, 14, 29);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 #cards {
   width: 100%;
-  height: 40%;
+  height: 30%;
   display: flex;
   flex-direction: row;
-  gap: 1.5rem;
+  gap: 0.5rem;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
 .titulo {
-  margin-left: 50px;
+  margin-left: 185px;
   display: flex;
   justify-content: left;
   color: white;
+}
+.menu {
+  display: flex;
+  width: 820px;
+  height: 345px;
+  margin-left: 50px;
+  margin-top: 25px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }

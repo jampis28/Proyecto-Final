@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+}
+#menus {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 50px;
+  box-sizing: border-box;
+  gap: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.wind {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 150px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-left: 28px;
+  background-color: rgb(30, 33, 58);
+  color: white;
+  box-shadow: 1px 10px 25px rgba(0, 0, 0, 0.5);
+  transition: 4s;
+  cursor: pointer;
+}
+.wind:hover {
+  transform: scale(1.1);
+  transition: 4s;
+}
+.humidity {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 150px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-left: 48px;
+  background-color: rgb(30, 33, 58);
+  color: white;
+  box-shadow: 1px 10px 25px rgba(0, 0, 0, 0.5);
+  transition: 4s;
+  cursor: pointer;
+}
+.humidity:hover {
+  transform: scale(1.1);
+  transition: 4s;
+}
+.progress{
+    width: 200px;
+    height: 20px;
+    border: 2px solid white;
+}
+.progress-bar{
+    
+}
+.visibility {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 150px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-left: 28px;
+  background-color: rgb(30, 33, 58);
+  color: white;
+  box-shadow: 1px 10px 25px rgba(0, 0, 0, 0.5);
+  transition: 4s;
+  cursor: pointer;
+}
+.visibility:hover {
+  transform: scale(1.1);
+  transition: 4s;
+}
+.Air {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 150px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-left: 48px;
+  background-color: rgb(30, 33, 58);
+  color: white;
+  box-shadow: 1px 10px 25px rgba(0, 0, 0, 0.5);
+  transition: 4s;
+  cursor: pointer;
+}
+.Air:hover {
+  transform: scale(1.1);
+  transition: 4s;
+}
