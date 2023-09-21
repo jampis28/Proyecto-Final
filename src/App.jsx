@@ -7,9 +7,10 @@ import bg from "../weather-app-master/weather-app-master/Cloud-background.png";
 import nieve from "../weather-app-master/weather-app-master/Snow.png";
 import location from "../weather-app-master/weather-app-master/my_location.svg";
 function App() {
-  const { data, data2, handleClick, handleSubmit } = Services();
+  const { data, data2, handleClick, handleSubmit,city,setCity } = Services();
   console.log("clima hoy", data);
   console.log("clima 5 dias", data2);
+ 
   return (
     <>
       {data2 && (
@@ -21,6 +22,8 @@ function App() {
           submit={handleSubmit}
           img={lluvia}
           location ={location}
+          input={city}
+          aginput ={setCity}
         />
       )}
     </>

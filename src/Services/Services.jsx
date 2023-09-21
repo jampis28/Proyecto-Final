@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 function Services() {
-  const [city, setCity] = useState("esmeraldas");
+  const [city, setCity] = useState("esmeraldas,EC");
   const [data, setData] = useState(null);
   const [data2, setData2] = useState(null);
 
@@ -41,7 +41,7 @@ function Services() {
   };
 
 
-  return {data, data2,handleSubmit, handleClick}
+  return {data, data2,handleSubmit, handleClick, city,setCity}
 }
 
 export default Services;

@@ -10,15 +10,15 @@ function Menu(props) {
       <div id="menus">
         <div className="wind">
           <p id="windstatus">Wind Status</p>
-          <h1>{Math.round(props.dataDias.wind.speed)} mph</h1>
-          <p>WSW</p>
+          <h1 id="temper">{Math.round(props.dataDias.wind.speed)} <p id="nomen">mph</p></h1>
+          <p id="temper2">WSW</p>
         </div>
         <div className="humidity">
-          <p>Humidity</p>
-          <h1>{Math.round(props.dataDias.main.humidity)} %</h1>
+          <p id="windstatus">Humidity</p>
+          <h1 id="temper">{Math.round(props.dataDias.main.humidity)} <p id="nomen">%</p></h1>
           <div className="progress">
             <div
-              className="progress-bar"
+              className="progress-bar bg-warning"
               role="progressbar"
               style={{ width: props.dataDias.main.humidity+"%"}}
               aria-valuenow={props.dataDias.main.humidity}
@@ -31,11 +31,11 @@ function Menu(props) {
         </div>
         <div className="visibility">
           <p id="windstatus">Visibility</p>
-          <h1>{(props.dataDias.visibility * milla).toFixed(2)} miles</h1>
+          <h1 id="temper">{(props.dataDias.visibility * milla).toFixed(2)} <p id="nomen">miles</p></h1>
         </div>
         <div className="Air">
           <p id="windstatus">Air Pressure</p>
-          <h1>{props.dataDias.main.pressure} mph</h1>
+          <h1 id="temper">{props.dataDias.main.pressure} <p id="nomen">mph</p></h1>
         </div>
       </div>
     </>
