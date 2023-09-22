@@ -62,7 +62,7 @@ function App2(props) {
               >
                 Search for Place
               </Button>
-              <img id="imglocation" src={props.location} alt="location" />
+              <img id="imglocation" src={props.location} alt="location" onClick={props.fnLocation} />
             </div>
             <Modales
               show={show}
