@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "../Card/Card";
 import "./App2.css";
 import Menu from "../Menu/Menu";
 import { format } from "date-fns";
+import Modales from "../Modales/Modales";
+import Button from 'react-bootstrap/Button';
 function App2(props) {
   const fechanumero = props.data2.list[1].dt_txt;
   const fecha = new Date(fechanumero);
@@ -38,6 +40,13 @@ function App2(props) {
   const nombreDelDia6 = format(fecha6, "EE");
   const numeroDelDia6 = fecha6.getDate();
   const Mes6 = fecha6.toLocaleDateString("es-ES", { month: "short" });
+
+  const [show, setShow] = useState(false);
+
+  function handleShow(breakpoint) {
+    setFullscreen(breakpoint);
+    setShow(true);
+  }
   return (
     <>
       <div className="principal">
@@ -45,11 +54,22 @@ function App2(props) {
           <img id="bgimg" src={props.bg} alt="..." />
           <div id="bg">
             <div className="busqueda">
-              <button id="btnbuscar" type="button">
+              <Button
+                id="btbuscar exampleModalToggle"
+                type="button"
+                className="me-2 mb-2" 
+                onClick={() => setShow(true)}
+              >
                 Search for Place
-              </button>
+              </Button>
               <img id="imglocation" src={props.location} alt="location" />
             </div>
+            <Modales
+              show={show}
+              onHide={() => setShow(false)}
+              submit={props.submit}
+              click={props.click}
+            ></Modales>
             <div id="bgimgs">
               <img id="bgimg2" src={props.img} alt="..." />
             </div>
@@ -72,7 +92,7 @@ function App2(props) {
               </p>
             </div>
             <div className="ciudad">
-              <p>{(props.input)}</p>
+              <p>{props.input}</p>
             </div>
           </div>
         </div>

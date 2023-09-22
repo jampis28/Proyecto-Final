@@ -15,7 +15,7 @@ function Services() {
     };
 
     getData();
-  }, []);
+  }, [city]);
 
   useEffect(() => {
     const getData = async () => {
@@ -27,9 +27,9 @@ function Services() {
     };
 
     getData();
-  }, []);
+  }, [city]);
 
-  const handleSubmit = (e) => {
+  const busqueda = (e) => {
     e.preventDefault();
     const ciudad = e.target[0].value;
     setCity(ciudad);
@@ -40,8 +40,7 @@ function Services() {
     setCity(ciudad);
   };
 
-
-  return {data, data2,handleSubmit, handleClick, city,setCity}
+  return {data, data2,busqueda, handleClick, city,setCity}
 }
 
 export default Services;
