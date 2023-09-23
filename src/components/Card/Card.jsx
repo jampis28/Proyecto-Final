@@ -16,8 +16,8 @@ function Card(props) {
           </div>
 
           <div className="card-body">
-            <p className="card-text">{props.dataDiasmax}<span id="nomenc">°C</span></p>
-            <p className="card-text2">{props.dataDiasmin}<span id="nomenc">°C</span></p>
+            <p className="card-text">{props.dataDiasmax}<span id="nomenc">{props.checked=="metric"?"°C":"°F"}</span></p>
+            <p className="card-text2">{props.dataDiasmin}<span id="nomenc">{props.checked=="metric"?"°C":"°F"}</span></p>
           </div>
         </div>
       </div>

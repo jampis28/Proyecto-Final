@@ -31,7 +31,7 @@ function Menu(props) {
         </div>
         <div className="visibility">
           <p id="windstatus">Visibility</p>
-          <h1 id="temper">{(props.dataDias.visibility * milla).toFixed(2)} <p id="nomen">miles</p></h1>
+          <h1 id="temper">{ Number((props.dataDias.visibility).toFixed(2))} <p id="nomen">{props.checked=="metric"?"m":"mi"}</p></h1>
         </div>
         <div className="Air">
           <p id="windstatus">Air Pressure</p>

@@ -155,6 +155,79 @@
   justify-content: center;
   text-align: center;
 }
+.toogle-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 70%;
+    height: 10%;
+    align-items: center;
+    gap: 10px;
+    padding-top: 5%
+}
+
+.knobs,.layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0
+}
+
+.toogle-switch {
+    position: relative;
+    top: 10px; left: 690px;
+    width: 80px;
+    height: 36px;
+    overflow: hidden
+}
+
+.checkbox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3
+}
+
+.knobs {
+    z-index: 2
+}
+
+.layer {
+    width: 100%;
+    background-color: #1e213a;
+    transition: .3s ease all;
+    z-index: 1;
+    border-radius: 100px
+}
+
+#button-1 .knobs:before {
+    content: "°C";
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 25px;
+    height: 30px;
+    color: #000;
+    font-size: 10px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1;
+    padding: 9px 4px;
+    background-color: #e7e7eb;
+    border-radius: 50%;
+    transition: .3s cubic-bezier(.18,.89,.35,1.15) all
+}
+
+#button-1 .checkbox:checked+.knobs:before {
+    content: "°F";
+    left: 50px;
+    background-color: #585676;
+    color: #e7e7eb
+}
 #cards {
   width: 100%;
   height: 30%;

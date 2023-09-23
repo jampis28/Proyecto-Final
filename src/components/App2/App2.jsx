@@ -6,9 +6,7 @@ import { format } from "date-fns";
 import Modales from "../Modales/Modales";
 import Button from "react-bootstrap/Button";
 function App2(props) {
-
   const [show, setShow] = useState(false);
-
   function handleShow(breakpoint) {
     setFullscreen(breakpoint);
     setShow(true);
@@ -31,14 +29,13 @@ function App2(props) {
                 Search for Place
               </Button>
               <div id="imglocations">
-              <img
-                id="imglocation"
-                src={props.location}
-                alt="location"
-                onClick={props.fnLocation}
-              />
+                <img
+                  id="imglocation"
+                  src={props.location}
+                  alt="location"
+                  onClick={props.fnLocation}
+                />
               </div>
-              
             </div>
             <Modales
               show={show}
@@ -49,13 +46,17 @@ function App2(props) {
               modalcerrar={props.modalcerrar}
             ></Modales>
             <div id="bgimgs">
-              <img id="bgimg2" src={url + (props.data&&(props.data.weather[0].icon + ".png"))} alt="..." />
+              <img
+                id="bgimg2"
+                src={url + (props.data && props.data.weather[0].icon + ".png")}
+                alt="..."
+              />
             </div>
             <div id="tempd">
               {props.data && (
                 <h1 id="temperatura">
                   {Math.round(props.data.main.temp)}
-                  <p id="nomenclatura">°C</p>
+                  <p id="nomenclatura">{props.checked=="metric"?"°C":"°F"}</p>
                 </h1>
               )}
             </div>
@@ -66,15 +67,21 @@ function App2(props) {
               <p>Today</p>
               <p>-</p>
               <p>
-                {props.fechas.nombreDelDia6}, {props.fechas.numeroDelDia6} {props.fechas.Mes6}
+                {props.fechas.nombreDelDia6}, {props.fechas.numeroDelDia6}{" "}
+                {props.fechas.Mes6}
               </p>
             </div>
             <div className="ciudad">
-              <p>{(props.input).toUpperCase()}</p>
+              <p>{props.input.toUpperCase()}</p>
             </div>
           </div>
         </div>
         <div className="Derecho">
+          <div className="toogle-switch" id="button-1">
+            <input type="checkbox" className="checkbox" onChange={props.fnChekeado}checked={props.checked=="metric"?false:true}/>
+            <div className="knobs"onChange={props.fnChekeado}></div>
+            <div className="layer"></div>
+          </div>
           {props.data2 && (
             <>
               <div id="cards">
@@ -85,6 +92,7 @@ function App2(props) {
                   nombre={props.fechas.nombreDelDia1}
                   numero={props.fechas.numeroDelDia1}
                   mes={props.fechas.Mes}
+                  checked={props.checked}
                 ></Card>
                 <Card
                   dataDiasmax={Math.round(props.data2.list[9].main.temp_max)}
@@ -93,6 +101,7 @@ function App2(props) {
                   nombre={props.fechas.nombreDelDia2}
                   numero={props.fechas.numeroDelDia2}
                   mes={props.fechas.Mes2}
+                  checked={props.checked}
                 ></Card>
                 <Card
                   dataDiasmax={Math.round(props.data2.list[17].main.temp_max)}
@@ -101,6 +110,7 @@ function App2(props) {
                   nombre={props.fechas.nombreDelDia3}
                   numero={props.fechas.numeroDelDia3}
                   mes={props.fechas.Mes3}
+                  checked={props.checked}
                 ></Card>
                 <Card
                   dataDiasmax={Math.round(props.data2.list[25].main.temp_max)}
@@ -109,6 +119,7 @@ function App2(props) {
                   nombre={props.fechas.nombreDelDia4}
                   numero={props.fechas.numeroDelDia4}
                   mes={props.fechas.Mes4}
+                  checked={props.checked}
                 ></Card>
                 <Card
                   dataDiasmax={Math.round(props.data2.list[33].main.temp_max)}
@@ -117,13 +128,14 @@ function App2(props) {
                   nombre={props.fechas.nombreDelDia5}
                   numero={props.fechas.numeroDelDia5}
                   mes={props.fechas.Mes5}
+                  checked={props.checked}
                 ></Card>
               </div>
               <div className="titulo">
                 <h1 id="tituloh1">Today's HightLights</h1>
               </div>
               <div className="menu">
-                <Menu dataDias={props.data}></Menu>
+                <Menu dataDias={props.data} checked={props.checked}></Menu>
               </div>
             </>
           )}

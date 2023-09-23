@@ -10,7 +10,7 @@ import search from "../weather-app-master/weather-app-master/search.png";
 import close from "../weather-app-master/weather-app-master/close.svg";
 
 function App() {
-  const { data, data2, handleClick, busqueda,city,setCity,getLocationAndWeather ,fechas} = Services();
+  const { data, data2, handleClick, busqueda,city,setCity,getLocationAndWeather ,fechas,chekeado,checked} = Services();
   console.log("clima hoy", data);
   console.log("clima 5 dias", data2);
   return (
@@ -30,6 +30,8 @@ function App() {
           fechas={fechas}
           buscar={search}
           modalcerrar={close}
+          fnChekeado={chekeado}
+          checked={checked}
         />
       )}
     </>

@@ -7,6 +7,7 @@ function Services() {
   const [data2, setData2] = useState(null);
   const [location, setLocation] = useState([]);
   const [fechas, setFechas] = useState([]);
+  const [checked, setchecked] = useState("metric");
 
   useEffect(() => {
     const getData = async () => {
@@ -15,7 +16,7 @@ function Services() {
           cambio
             ? `&lat=${location.latitude}&lon=${location.longitude}`
             : `${city}`
-        }&units=metric&appid=f884dfb11487f89e30a14b7d1d9d2d5c`
+        }&units=${checked}&appid=f884dfb11487f89e30a14b7d1d9d2d5c`
       );
       const datos = await res.json();
       setData(datos);
@@ -23,7 +24,7 @@ function Services() {
     };
 
     getData();
-  }, [city, location]);
+  }, [city, location,checked]);
 
   useEffect(() => {
     const getData = async () => {
@@ -32,7 +33,7 @@ function Services() {
           cambio
             ? `&lat=${location.latitude}&lon=${location.longitude}`
             : `${city}`
-        }&units=metric&appid=f884dfb11487f89e30a14b7d1d9d2d5c`
+        }&units=${checked}&appid=f884dfb11487f89e30a14b7d1d9d2d5c`
       );
       const datos = await res.json();
       setData2(datos);
@@ -40,7 +41,7 @@ function Services() {
     };
 
     getData();
-  }, [city, location]);
+  }, [city, location,checked]);
 
   const busqueda = (e) => {
     setCambio(false);
@@ -116,7 +117,18 @@ function Services() {
       
     }));
   };
-
+  const chekeado = (e) =>{
+    e.preventDefault()
+    console.log("hola");
+    const chekeador = e.target.checked
+    if (chekeador==true) {
+      setchecked("imperial")
+      console.log("listo");
+    }else{
+      setchecked("metric")
+      console.log("mal");
+    }
+  };
   return {
     data,
     data2,
@@ -127,6 +139,8 @@ function Services() {
     getLocationAndWeather,
     fechas,
     Fechas,
+    chekeado,
+    checked,
   };
 }
 

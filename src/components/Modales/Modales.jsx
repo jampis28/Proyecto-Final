@@ -25,13 +25,13 @@ function Modales(props) {
           <div id="selector">
           <input id="esmeraldas"
             type="button"
-            value="Esmeraldas"
+            value="Esmeraldas,Ec"
             readOnly
             onClick={props.click}
           />
           <input id="guayaquil"
             type="button"
-            value="Guayaquil"
+            value="Guayaquil,Ec"
             readOnly
             onClick={props.click}
           />
