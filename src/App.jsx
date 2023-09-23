@@ -6,12 +6,13 @@ import lluvia from "../weather-app-master/weather-app-master/Shower.png";
 import bg from "../weather-app-master/weather-app-master/Cloud-background.png";
 import nieve from "../weather-app-master/weather-app-master/Snow.png";
 import location from "../weather-app-master/weather-app-master/my_location.svg";
+import search from "../weather-app-master/weather-app-master/search.png";
+import close from "../weather-app-master/weather-app-master/close.svg";
 
 function App() {
-  const { data, data2, handleClick, busqueda,city,setCity,getLocationAndWeather } = Services();
+  const { data, data2, handleClick, busqueda,city,setCity,getLocationAndWeather ,fechas} = Services();
   console.log("clima hoy", data);
   console.log("clima 5 dias", data2);
- 
   return (
     <>
       {data2 && (
@@ -26,6 +27,9 @@ function App() {
           input={city}
           aginput ={setCity}
           fnLocation={getLocationAndWeather}
+          fechas={fechas}
+          buscar={search}
+          modalcerrar={close}
         />
       )}
     </>

@@ -11,11 +11,13 @@ function Modales(props) {
         aria-labelledby="example-custom-modal-styling-title"
         fullscreen={true}
       >
-        <Modal.Header closeButton></Modal.Header>
+        <Modal.Header >
+          <img id="cerrar" onClick={props.onHide} src={props.modalcerrar} alt="cerrar" srcset="" />
+        </Modal.Header>
         <Modal.Body>
           <form onSubmit={props.submit}>
             <div id="form">
-            <input type="text" id="inputCiudad"className="form-control"  aria-label="readonly input example" ></input>
+            <input type="text" id="inputCiudad"className="form-control"  aria-label="readonly input example" placeholder="Search location"></input>
             <button type="submit" className="btn btn-primary mb-3">Search</button>
             </div>
 

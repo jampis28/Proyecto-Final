@@ -4,42 +4,8 @@ import "./App2.css";
 import Menu from "../Menu/Menu";
 import { format } from "date-fns";
 import Modales from "../Modales/Modales";
-import Button from 'react-bootstrap/Button';
+import Button from "react-bootstrap/Button";
 function App2(props) {
-  const fechanumero = props.data2.list[1].dt_txt;
-  const fecha = new Date(fechanumero);
-  const nombreDelDia1 = format(fecha, "EE");
-  const numeroDelDia1 = fecha.getDate();
-  const Mes = fecha.toLocaleDateString("es-ES", { month: "short" });
-
-  const fechanumero2 = props.data2.list[9].dt_txt;
-  const fecha2 = new Date(fechanumero2);
-  const nombreDelDia2 = format(fecha2, "EE");
-  const numeroDelDia2 = fecha2.getDate();
-  const Mes2 = fecha2.toLocaleDateString("es-ES", { month: "short" });
-
-  const fechanumero3 = props.data2.list[17].dt_txt;
-  const fecha3 = new Date(fechanumero3);
-  const nombreDelDia3 = format(fecha3, "EE");
-  const numeroDelDia3 = fecha3.getDate();
-  const Mes3 = fecha3.toLocaleDateString("es-ES", { month: "short" });
-
-  const fechanumero4 = props.data2.list[25].dt_txt;
-  const fecha4 = new Date(fechanumero4);
-  const nombreDelDia4 = format(fecha4, "EE");
-  const numeroDelDia4 = fecha4.getDate();
-  const Mes4 = fecha4.toLocaleDateString("es-ES", { month: "short" });
-
-  const fechanumero5 = props.data2.list[33].dt_txt;
-  const fecha5 = new Date(fechanumero5);
-  const nombreDelDia5 = format(fecha5, "EE");
-  const numeroDelDia5 = fecha5.getDate();
-  const Mes5 = fecha5.toLocaleDateString("es-ES", { month: "short" });
-
-  const fecha6 = new Date();
-  const nombreDelDia6 = format(fecha6, "EE");
-  const numeroDelDia6 = fecha6.getDate();
-  const Mes6 = fecha6.toLocaleDateString("es-ES", { month: "short" });
 
   const [show, setShow] = useState(false);
 
@@ -47,6 +13,8 @@ function App2(props) {
     setFullscreen(breakpoint);
     setShow(true);
   }
+
+  const url = "http://openweathermap.org/img/w/";
   return (
     <>
       <div className="principal">
@@ -57,21 +25,31 @@ function App2(props) {
               <Button
                 id="btbuscar exampleModalToggle"
                 type="button"
-                className="me-2 mb-2" 
+                className="me-2 btn"
                 onClick={() => setShow(true)}
               >
                 Search for Place
               </Button>
-              <img id="imglocation" src={props.location} alt="location" onClick={props.fnLocation} />
+              <div id="imglocations">
+              <img
+                id="imglocation"
+                src={props.location}
+                alt="location"
+                onClick={props.fnLocation}
+              />
+              </div>
+              
             </div>
             <Modales
               show={show}
               onHide={() => setShow(false)}
               submit={props.submit}
               click={props.click}
+              buscar={props.buscar}
+              modalcerrar={props.modalcerrar}
             ></Modales>
             <div id="bgimgs">
-              <img id="bgimg2" src={props.img} alt="..." />
+              <img id="bgimg2" src={url + (props.data&&(props.data.weather[0].icon + ".png"))} alt="..." />
             </div>
             <div id="tempd">
               {props.data && (
@@ -88,11 +66,11 @@ function App2(props) {
               <p>Today</p>
               <p>-</p>
               <p>
-                {nombreDelDia6}, {numeroDelDia6} {Mes6}
+                {props.fechas.nombreDelDia6}, {props.fechas.numeroDelDia6} {props.fechas.Mes6}
               </p>
             </div>
             <div className="ciudad">
-              <p>{props.input}</p>
+              <p>{(props.input).toUpperCase()}</p>
             </div>
           </div>
         </div>
@@ -103,42 +81,42 @@ function App2(props) {
                 <Card
                   dataDiasmax={Math.round(props.data2.list[1].main.temp_max)}
                   dataDiasmin={Math.round(props.data2.list[1].main.temp_min)}
-                  img={props.img}
-                  nombre={nombreDelDia1}
-                  numero={numeroDelDia1}
-                  mes={Mes}
+                  img={url + (props.data2.list[1].weather[0].icon + ".png")}
+                  nombre={props.fechas.nombreDelDia1}
+                  numero={props.fechas.numeroDelDia1}
+                  mes={props.fechas.Mes}
                 ></Card>
                 <Card
                   dataDiasmax={Math.round(props.data2.list[9].main.temp_max)}
                   dataDiasmin={Math.round(props.data2.list[9].main.temp_min)}
-                  img={props.img}
-                  nombre={nombreDelDia2}
-                  numero={numeroDelDia2}
-                  mes={Mes2}
+                  img={url + (props.data2.list[9].weather[0].icon + ".png")}
+                  nombre={props.fechas.nombreDelDia2}
+                  numero={props.fechas.numeroDelDia2}
+                  mes={props.fechas.Mes2}
                 ></Card>
                 <Card
                   dataDiasmax={Math.round(props.data2.list[17].main.temp_max)}
                   dataDiasmin={Math.round(props.data2.list[17].main.temp_min)}
-                  img={props.img}
-                  nombre={nombreDelDia3}
-                  numero={numeroDelDia3}
-                  mes={Mes3}
+                  img={url + (props.data2.list[17].weather[0].icon + ".png")}
+                  nombre={props.fechas.nombreDelDia3}
+                  numero={props.fechas.numeroDelDia3}
+                  mes={props.fechas.Mes3}
                 ></Card>
                 <Card
                   dataDiasmax={Math.round(props.data2.list[25].main.temp_max)}
                   dataDiasmin={Math.round(props.data2.list[25].main.temp_min)}
-                  img={props.img}
-                  nombre={nombreDelDia4}
-                  numero={numeroDelDia4}
-                  mes={Mes4}
+                  img={url + (props.data2.list[25].weather[0].icon + ".png")}
+                  nombre={props.fechas.nombreDelDia4}
+                  numero={props.fechas.numeroDelDia4}
+                  mes={props.fechas.Mes4}
                 ></Card>
                 <Card
                   dataDiasmax={Math.round(props.data2.list[33].main.temp_max)}
                   dataDiasmin={Math.round(props.data2.list[33].main.temp_min)}
-                  img={props.img}
-                  nombre={nombreDelDia5}
-                  numero={numeroDelDia5}
-                  mes={Mes5}
+                  img={url + (props.data2.list[33].weather[0].icon + ".png")}
+                  nombre={props.fechas.nombreDelDia5}
+                  numero={props.fechas.numeroDelDia5}
+                  mes={props.fechas.Mes5}
                 ></Card>
               </div>
               <div className="titulo">
@@ -149,6 +127,9 @@ function App2(props) {
               </div>
             </>
           )}
+          <div className="footer">
+            <p>created by Jean Pierre Ramos Gomez - devChallenges.io</p>
+          </div>
         </div>
       </div>
     </>

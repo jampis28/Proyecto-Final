@@ -1,5 +1,8 @@
 import React from "react";
 import "./Card.css";
+import nieve from "../weather-app-master/weather-app-master/Snow.png";
+import lluvia from "../weather-app-master/weather-app-master/Shower.png";
+import Clear from "../weather-app-master/weather-app-master/Clear.png";
 function Card(props) {
   return (
     <>
@@ -13,8 +16,8 @@ function Card(props) {
           </div>
 
           <div className="card-body">
-            <p className="card-text">{props.dataDiasmax}<p id="nomenc">°C</p></p>
-            <p className="card-text2">{props.dataDiasmin}<p id="nomenc">°C</p></p>
+            <p className="card-text">{props.dataDiasmax}<span id="nomenc">°C</span></p>
+            <p className="card-text2">{props.dataDiasmin}<span id="nomenc">°C</span></p>
           </div>
         </div>
       </div>
