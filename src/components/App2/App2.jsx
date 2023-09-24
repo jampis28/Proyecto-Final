@@ -11,7 +11,42 @@ function App2(props) {
     setFullscreen(breakpoint);
     setShow(true);
   }
-
+  function horam(horas) {
+    if ((props.fechas.hora).toString()>="6"&&(props.fechas.hora).toString()<"9") {
+      return Math.round(props.data2.list[horas].main.temp_max)
+    }else if ((props.fechas.hora).toString()>="9"&&(props.fechas.hora).toString()<"12") {
+      return Math.round(props.data2.list[horas+1].main.temp_max)
+    }else if ((props.fechas.hora).toString()>="12"&&(props.fechas.hora).toString()<"15") {
+      return Math.round(props.data2.list[horas+2].main.temp_max)
+    }else if ((props.fechas.hora).toString()>="15"&&(props.fechas.hora).toString()<"18") {
+      return Math.round(props.data2.list[horas+3].main.temp_max)
+    }else if ((props.fechas.hora).toString()>="18"&&(props.fechas.hora).toString()<"21") {
+      return Math.round(props.data2.list[horas+4].main.temp_max)
+    }else if ((props.fechas.hora).toString()>="21"&&(props.fechas.hora).toString()<"23") {
+      return Math.round(props.data2.list[horas+5].main.temp_max)
+    }else if ((props.fechas.hora).toString()>="0"&&(props.fechas.hora).toString()<"6") {
+      return Math.round(props.data2.list[horas+7].main.temp_max)
+    }
+  }
+  function horami(horas) {
+    if ((props.fechas.hora).toString()>="6"&&(props.fechas.hora).toString()<"9") {
+      return Math.round(props.data2.list[horas].main.temp_min) 
+    }else if ((props.fechas.hora).toString()>="9"&&(props.fechas.hora).toString()<"12") {
+      return Math.round(props.data2.list[horas+1].main.temp_min)
+    }else if ((props.fechas.hora).toString()>="12"&&(props.fechas.hora).toString()<"15") {
+      return Math.round(props.data2.list[horas+2].main.temp_min)
+    }else if ((props.fechas.hora).toString()>="15"&&(props.fechas.hora).toString()<"18") {
+      return Math.round(props.data2.list[horas+3].main.temp_min)
+    }else if ((props.fechas.hora).toString()>="18"&&(props.fechas.hora).toString()<"21") {
+      return Math.round(props.data2.list[horas+4].main.temp_min)
+    }else if ((props.fechas.hora).toString()>="21"&&(props.fechas.hora).toString()<"23") {
+      return Math.round(props.data2.list[horas+5].main.temp_min)
+    }else if ((props.fechas.hora).toString()>="0"&&(props.fechas.hora).toString()<"06") {
+      return Math.round(props.data2.list[horas+7].main.temp_min)
+    }
+    
+  }
+  let clima = props.climaimg.filter(climas => climas.name == (props.data.weather[0].main))
   const url = "http://openweathermap.org/img/w/";
   return (
     <>
@@ -48,7 +83,7 @@ function App2(props) {
             <div id="bgimgs">
               <img
                 id="bgimg2"
-                src={url + (props.data && props.data.weather[0].icon + ".png")}
+                src={clima[0].img}
                 alt="..."
               />
             </div>
@@ -86,8 +121,8 @@ function App2(props) {
             <>
               <div id="cards">
                 <Card
-                  dataDiasmax={Math.round(props.data2.list[1].main.temp_max)}
-                  dataDiasmin={Math.round(props.data2.list[1].main.temp_min)}
+                  dataDiasmax={horam(0)}
+                  dataDiasmin={horami(0)}
                   img={url + (props.data2.list[1].weather[0].icon + ".png")}
                   nombre={props.fechas.nombreDelDia1}
                   numero={props.fechas.numeroDelDia1}
@@ -95,8 +130,8 @@ function App2(props) {
                   checked={props.checked}
                 ></Card>
                 <Card
-                  dataDiasmax={Math.round(props.data2.list[9].main.temp_max)}
-                  dataDiasmin={Math.round(props.data2.list[9].main.temp_min)}
+                  dataDiasmax={horam(8)}
+                  dataDiasmin={horami(8)}
                   img={url + (props.data2.list[9].weather[0].icon + ".png")}
                   nombre={props.fechas.nombreDelDia2}
                   numero={props.fechas.numeroDelDia2}
@@ -104,8 +139,8 @@ function App2(props) {
                   checked={props.checked}
                 ></Card>
                 <Card
-                  dataDiasmax={Math.round(props.data2.list[17].main.temp_max)}
-                  dataDiasmin={Math.round(props.data2.list[17].main.temp_min)}
+                dataDiasmax={horam(16)}
+                dataDiasmin={horami(16)}
                   img={url + (props.data2.list[17].weather[0].icon + ".png")}
                   nombre={props.fechas.nombreDelDia3}
                   numero={props.fechas.numeroDelDia3}
@@ -113,8 +148,8 @@ function App2(props) {
                   checked={props.checked}
                 ></Card>
                 <Card
-                  dataDiasmax={Math.round(props.data2.list[25].main.temp_max)}
-                  dataDiasmin={Math.round(props.data2.list[25].main.temp_min)}
+                  dataDiasmax={horam(24)}
+                  dataDiasmin={horami(24)}
                   img={url + (props.data2.list[25].weather[0].icon + ".png")}
                   nombre={props.fechas.nombreDelDia4}
                   numero={props.fechas.numeroDelDia4}
@@ -122,8 +157,8 @@ function App2(props) {
                   checked={props.checked}
                 ></Card>
                 <Card
-                  dataDiasmax={Math.round(props.data2.list[33].main.temp_max)}
-                  dataDiasmin={Math.round(props.data2.list[33].main.temp_min)}
+                 dataDiasmax={horam(32)}
+                 dataDiasmin={horami(32)}
                   img={url + (props.data2.list[33].weather[0].icon + ".png")}
                   nombre={props.fechas.nombreDelDia5}
                   numero={props.fechas.numeroDelDia5}

@@ -72,7 +72,6 @@ function Services() {
   const Fechas = () =>{
 
       const fechanumero = data2&&(data2.list[1].dt_txt)
-      console.log(fechanumero);
       const fecha = new Date(fechanumero)
       const nombreDelDia1 = format(fecha, "EE")
       const numeroDelDia1 = fecha.getDate()
@@ -106,6 +105,7 @@ function Services() {
       const nombreDelDia6 = format(fecha6, "EE")
       const numeroDelDia6 = fecha6.getDate()
       const Mes6 = fecha6.toLocaleDateString("es-ES", { month: "short" })
+      const hora = fecha6.getHours();
 
     return (setFechas({
       nombreDelDia1,numeroDelDia1,Mes,
@@ -113,7 +113,7 @@ function Services() {
       nombreDelDia3,numeroDelDia3,Mes3,
       nombreDelDia4,numeroDelDia4,Mes4,
       nombreDelDia5,numeroDelDia5,Mes5,
-      nombreDelDia6,numeroDelDia6,Mes6
+      nombreDelDia6,numeroDelDia6,Mes6,hora
       
     }));
   };
