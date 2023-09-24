@@ -8,6 +8,7 @@ import nieve from "../weather-app-master/weather-app-master/Snow.png";
 import location from "../weather-app-master/weather-app-master/my_location.svg";
 import search from "../weather-app-master/weather-app-master/search.png";
 import close from "../weather-app-master/weather-app-master/close.svg";
+import navigation from "../weather-app-master/weather-app-master/navigation.svg";
 
 function App() {
   const { data, data2, handleClick, busqueda,city,setCity,getLocationAndWeather ,fechas,chekeado,checked} = Services();
@@ -32,6 +33,7 @@ function App() {
           modalcerrar={close}
           fnChekeado={chekeado}
           checked={checked}
+          navigation={navigation}
         />
       )}
     </>

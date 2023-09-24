@@ -122,4 +122,29 @@
   font-weight: 700;
   font-size: 14px;
   color: #E7E7EB;
+  margin-top: 5px;
+}
+.navigationc{
+  display: flex;
+}
+.navigation{
+  display: flex;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(97, 99, 117);
+  border-radius: 50%;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+#navigation{
+  display: flex;
+  width: 25px;
+  height: 20px;
+  transform: rotate(196deg);
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+
 }

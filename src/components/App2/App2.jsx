@@ -135,7 +135,7 @@ function App2(props) {
                 <h1 id="tituloh1">Today's HightLights</h1>
               </div>
               <div className="menu">
-                <Menu dataDias={props.data} checked={props.checked}></Menu>
+                <Menu dataDias={props.data} checked={props.checked} navigation={props.navigation}></Menu>
               </div>
             </>
           )}
