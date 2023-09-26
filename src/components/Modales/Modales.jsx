@@ -12,7 +12,7 @@ function Modales(props) {
         fullscreen={true}
       >
         <Modal.Header >
-          <img id="cerrar" onClick={props.onHide} src={props.modalcerrar} alt="cerrar" srcset="" />
+          <img id="cerrar" onClick={props.onHide} src={props.modalcerrar} alt="cerrar" />
         </Modal.Header>
         <Modal.Body>
           <form onSubmit={props.submit}>

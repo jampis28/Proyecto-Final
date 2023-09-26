@@ -121,8 +121,8 @@ function App2(props) {
             <>
               <div id="cards">
                 <Card
-                  dataDiasmax={horam(0)}
-                  dataDiasmin={horami(0)}
+                  dataDiasmax={(props.fechas.hora).toString()>="20"&&(props.fechas.hora).toString()<="24"?horam(0):(props.fechas.hora).toString()>="0"&&(props.fechas.hora).toString()<="06"?horam(0):horam(2)}
+                  dataDiasmin={(props.fechas.hora).toString()>="20"&&(props.fechas.hora).toString()<="24"?horami(0):(props.fechas.hora).toString()>="0"&&(props.fechas.hora).toString()<="06"?horami(0):horami(2)}
                   img={url + (props.data2.list[1].weather[0].icon + ".png")}
                   nombre={props.fechas.nombreDelDia1}
                   numero={props.fechas.numeroDelDia1}
@@ -130,8 +130,8 @@ function App2(props) {
                   checked={props.checked}
                 ></Card>
                 <Card
-                  dataDiasmax={horam(8)}
-                  dataDiasmin={horami(8)}
+                  dataDiasmax={(props.fechas.hora).toString()>="20"&&(props.fechas.hora).toString()<="24"?horam(8):(props.fechas.hora).toString()>="0"&&(props.fechas.hora).toString()<="06"?horam(8):horam(10)}
+                  dataDiasmin={(props.fechas.hora).toString()>="20"&&(props.fechas.hora).toString()<="24"?horami(8):(props.fechas.hora).toString()>="0"&&(props.fechas.hora).toString()<="06"?horami(8):horami(10)}
                   img={url + (props.data2.list[9].weather[0].icon + ".png")}
                   nombre={props.fechas.nombreDelDia2}
                   numero={props.fechas.numeroDelDia2}
@@ -139,8 +139,8 @@ function App2(props) {
                   checked={props.checked}
                 ></Card>
                 <Card
-                dataDiasmax={horam(16)}
-                dataDiasmin={horami(16)}
+                dataDiasmax={(props.fechas.hora).toString()>="20"&&(props.fechas.hora).toString()<="24"?horam(16):(props.fechas.hora).toString()>="0"&&(props.fechas.hora).toString()<="06"?horam(16):horam(18)}
+                dataDiasmin={(props.fechas.hora).toString()>="20"&&(props.fechas.hora).toString()<="24"?horami(16):(props.fechas.hora).toString()>="0"&&(props.fechas.hora).toString()<="06"?horami(16):horami(18)}
                   img={url + (props.data2.list[17].weather[0].icon + ".png")}
                   nombre={props.fechas.nombreDelDia3}
                   numero={props.fechas.numeroDelDia3}
@@ -148,8 +148,8 @@ function App2(props) {
                   checked={props.checked}
                 ></Card>
                 <Card
-                  dataDiasmax={horam(24)}
-                  dataDiasmin={horami(24)}
+                  dataDiasmax={(props.fechas.hora).toString()>="20"&&(props.fechas.hora).toString()<="24"?horam(24):(props.fechas.hora).toString()>="0"&&(props.fechas.hora).toString()<="06"?horam(24):horam(26)}
+                  dataDiasmin={(props.fechas.hora).toString()>="20"&&(props.fechas.hora).toString()<="24"?horami(24):(props.fechas.hora).toString()>="0"&&(props.fechas.hora).toString()<="06"?horami(24):horami(26)}
                   img={url + (props.data2.list[25].weather[0].icon + ".png")}
                   nombre={props.fechas.nombreDelDia4}
                   numero={props.fechas.numeroDelDia4}
@@ -157,8 +157,8 @@ function App2(props) {
                   checked={props.checked}
                 ></Card>
                 <Card
-                 dataDiasmax={horam(32)}
-                 dataDiasmin={horami(32)}
+                 dataDiasmax={(props.fechas.hora).toString()>="20"&&(props.fechas.hora).toString()<="24"?horam(32):(props.fechas.hora).toString()>="0"&&(props.fechas.hora).toString()<="06"?horam(32):horam(34)}
+                 dataDiasmin={(props.fechas.hora).toString()>="20"&&(props.fechas.hora).toString()<="24"?horami(32):(props.fechas.hora).toString()>="0"&&(props.fechas.hora).toString()<="06"?horami(32):horami(34)}
                   img={url + (props.data2.list[33].weather[0].icon + ".png")}
                   nombre={props.fechas.nombreDelDia5}
                   numero={props.fechas.numeroDelDia5}

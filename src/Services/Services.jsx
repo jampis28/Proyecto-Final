@@ -20,9 +20,8 @@ function Services() {
       );
       const datos = await res.json();
       setData(datos);
-      Fechas();
     };
-
+    Fechas();
     getData();
   }, [city, location,checked]);
 
@@ -37,12 +36,10 @@ function Services() {
       );
       const datos = await res.json();
       setData2(datos);
-      Fechas();
     };
-
+    Fechas();
     getData();
   }, [city, location,checked]);
-
   const busqueda = (e) => {
     setCambio(false);
     e.preventDefault();

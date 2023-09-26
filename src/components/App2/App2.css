@@ -16,6 +16,7 @@
   background-color: rgb(30, 33, 58);
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 #bg {
   position: absolute;
@@ -106,16 +107,18 @@
 }
 #bgimg {
   display: flex;
-  width: 100%;
+  width: 120%;
   height: 300px;
   opacity: 0.1;
 }
 #bgimg2 {
   width: 50%;
-  height: 50%;
+  height: 40%;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  margin-right: 30px;
 }
 #tempd {
   width: 100%;
