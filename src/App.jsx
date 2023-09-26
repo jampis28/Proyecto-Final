@@ -33,8 +33,6 @@ function App() {
     chekeado,
     checked,
   } = Services();
-  console.log("clima hoy", data);
-  console.log("clima 5 dias", data2);
   const clima = [
     { name: "Snow", img: Snow },
     { name: "Shower", img: Shower },
