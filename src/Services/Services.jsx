@@ -70,7 +70,6 @@ function Services() {
 
       const fechanumero = data2&&(data2.list[1].dt_txt)
       const fecha = new Date(fechanumero)
-      console.log(fecha);
       const nombreDelDia1 = format(fecha, "EE")
       const numeroDelDia1 = fecha.getDate()
       const Mes = fecha.toLocaleDateString("es-ES", { month: "short" })
