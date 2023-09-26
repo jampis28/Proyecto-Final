@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { format } from "date-fns";
 function Services() {
-  const [city, setCity] = useState("london");
+  const [city, setCity] = useState("esmeraldas");
   const [cambio, setCambio] = useState(false);
   const [data, setData] = useState(null);
   const [data2, setData2] = useState(null);
@@ -70,6 +70,7 @@ function Services() {
 
       const fechanumero = data2&&(data2.list[1].dt_txt)
       const fecha = new Date(fechanumero)
+      console.log(fecha);
       const nombreDelDia1 = format(fecha, "EE")
       const numeroDelDia1 = fecha.getDate()
       const Mes = fecha.toLocaleDateString("es-ES", { month: "short" })

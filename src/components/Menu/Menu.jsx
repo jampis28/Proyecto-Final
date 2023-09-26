@@ -43,7 +43,7 @@ function Menu(props) {
         <div className="Air">
           <p id="windstatus">Air Pressure</p>
           <h1 id="temper">
-            {props.dataDias.main.pressure} <p id="nomen">mph</p>
+            {props.dataDias.main.pressure} <p id="nomen">mb</p>
           </h1>
         </div>
       </div>

@@ -10,6 +10,7 @@ import Clear from "../weather-app-master/weather-app-master/Clear.png";
 import Rain from "../weather-app-master/weather-app-master/HeavyRain.png";
 import Sleet from "../weather-app-master/weather-app-master/Sleet.png";
 import Hail from "../weather-app-master/weather-app-master/Hail.png";
+import Haze from "../weather-app-master/weather-app-master/Hail.png";
 import Thunderstorm from "../weather-app-master/weather-app-master/Thunderstorm.png";
 import LightCloud from "../weather-app-master/weather-app-master/LightCloud.png";
 import LightRain from "../weather-app-master/weather-app-master/LightRain.png";
@@ -45,6 +46,7 @@ function App() {
     { name: "Thunderstorm", img: Thunderstorm },
     { name: "LightCloud", img: LightCloud },
     { name: "LightRain", img: LightRain },
+    { name: "Haze", img: Haze },
   ];
   return (
     <>
